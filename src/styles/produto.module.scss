@@ -1,0 +1,40 @@
+/* src/styles/produto.module.scss */
+
+.produto-page {
+    padding: 50px 20px;
+    .produto-detalhes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      img {
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+        margin: 20px;
+      }
+      .produto-info {
+        max-width: 500px;
+        margin: 20px;
+        p {
+          font-size: 1.2em;
+          margin-bottom: 15px;
+        }
+        .whatsapp-button {
+          display: inline-block;
+          padding: 15px 30px;
+          background-color: #25d366;
+          color: #fff;
+          text-decoration: none;
+          font-size: 1.2em;
+          margin-top: 20px;
+          &:hover {
+            background-color: #1ebe5d;
+          }
+          svg {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  

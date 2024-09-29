@@ -1,0 +1,517 @@
+@import './variables';
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background-color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  text-align: center;
+
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: lighten($white, 20%);
+    }
+
+    .cta-button {
+      background-color: $gold;
+      color: $black;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($gold, 10%);
+      }
+
+      svg {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+/* Services Section */
+.services-section {
+  padding: 60px 20px;
+  background-color: $white;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    color: $black;
+    margin-bottom: 40px;
+  }
+
+  .services-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: darken($black, 20%);
+  }
+
+  .services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .service-item {
+      flex: 1;
+      min-width: 280px;
+      padding: 20px;
+      background-color: $white;
+      border: 1px solid rgba($black, 0.1);
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+
+      h3 {
+        font-size: 1.5rem;
+        color: $black;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: darken($black, 20%);
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+
+  .whatsapp-button {
+    background-color: #25d366;
+    color: $white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken(#25d366, 10%);
+    }
+
+    svg {
+      margin-right: 8px;
+    }
+  }
+}
+
+/* Products Section */
+.products-section {
+  padding: 60px 20px;
+  background-color: $background-color;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    color: $black;
+    margin-bottom: 40px;
+  }
+
+  .products-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: darken($black, 20%);
+  }
+
+  .product-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .product-item {
+      flex: 1;
+      min-width: 280px;
+      padding: 20px;
+      margin: 10px;
+      background-color: $white;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      .detalhes-button {
+        background-color: $gold;
+        color: $black;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken($gold, 10%);
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  .whatsapp-contact {
+    margin-top: 40px;
+
+    .whatsapp-button {
+      background-color: #25d366;
+      color: $white;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#25d366, 10%);
+      }
+
+      svg {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+/* Trends Section */
+.trends-section {
+  padding: 60px 20px;
+  background-color: $white;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    color: $black;
+    margin-bottom: 40px;
+  }
+
+  .trends-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: darken($black, 20%);
+  }
+
+  .trend-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .trend-item {
+      flex: 1;
+      min-width: 280px;
+      padding: 20px;
+      margin: 10px;
+      background-color: $background-color;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+
+      img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+
+  .whatsapp-contact {
+    margin-top: 40px;
+
+    .whatsapp-button {
+      background-color: #25d366;
+      color: $white;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#25d366, 10%);
+      }
+
+      svg {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 60px 20px;
+  background-color: $background-color;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    color: $black;
+    margin-bottom: 40px;
+  }
+
+  .projects-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: darken($black, 20%);
+  }
+
+  .project-item {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: $gold;
+    }
+  }
+
+  .whatsapp-contact {
+    margin-top: 40px;
+
+    .whatsapp-button {
+      background-color: #25d366;
+      color: $white;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#25d366, 10%);
+      }
+
+      svg {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 60px 20px;
+  background-color: $white;
+  color: $black;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    color: $black;
+    margin-bottom: 40px;
+  }
+
+  .testimonial-item {
+    padding: 20px;
+    background-color: $background-color;
+    border-radius: 8px;
+    margin-bottom: 20px;
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $gold;
+    }
+  }
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 60px 20px;
+  background-color: $black;
+  text-align: center;
+  color: $white;
+
+  h2 {
+    font-size: 2.5rem;
+    color: $gold;
+    margin-bottom: 40px;
+  }
+
+  .contact-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: lighten($white, 20%);
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    input,
+    textarea {
+      padding: 12px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      border: 1px solid rgba($white, 0.2);
+      border-radius: 5px;
+      background-color: $background-color;
+
+      &:focus {
+        border-color: $gold;
+      }
+    }
+
+    button {
+      background-color: $gold;
+      color: $black;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($gold, 10%);
+      }
+    }
+  }
+
+  .whatsapp-contact {
+    margin-top: 40px;
+
+    .whatsapp-button {
+      background-color: #25d366;
+      color: $white;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(#25d366, 10%);
+      }
+
+      svg {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: $white;
+  font-size: 2rem;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken(#25d366, 10%);
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .services-container,
+  .product-items,
+  .trend-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
