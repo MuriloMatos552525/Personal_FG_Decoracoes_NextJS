@@ -1,40 +1,96 @@
-/* src/styles/produto.module.scss */
-
 .produto-page {
-    padding: 50px 20px;
-    .produto-detalhes {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      img {
-        max-width: 500px;
-        width: 100%;
-        height: auto;
-        margin: 20px;
-      }
-      .produto-info {
-        max-width: 500px;
-        margin: 20px;
-        p {
-          font-size: 1.2em;
-          margin-bottom: 15px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .produto-detalhes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+
+    .produto-imagem {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .produto-info {
+      max-width: 500px;
+
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+        color: #666;
+
+        strong {
+          color: #333;
+          font-weight: 600;
         }
-        .whatsapp-button {
-          display: inline-block;
-          padding: 15px 30px;
-          background-color: #25d366;
-          color: #fff;
-          text-decoration: none;
-          font-size: 1.2em;
-          margin-top: 20px;
-          &:hover {
-            background-color: #1ebe5d;
-          }
-          svg {
-            margin-right: 10px;
-          }
+      }
+
+      h3 {
+        font-size: 1.6rem;
+        margin-top: 30px;
+        color: #ff9900;
+      }
+
+      .whatsapp-button {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+
+        svg {
+          margin-right: 10px;
+        }
+
+        &:hover {
+          background-color: #1ebe5d;
         }
       }
     }
   }
-  
+
+  @media (max-width: 768px) {
+    .produto-detalhes {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .produto-info {
+      p {
+        font-size: 1rem;
+      }
+
+      .whatsapp-button {
+        font-size: 1rem;
+      }
+    }
+  }
+}

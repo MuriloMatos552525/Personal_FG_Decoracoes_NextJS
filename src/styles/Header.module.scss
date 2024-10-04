@@ -8,6 +8,14 @@
   z-index: 1000;
   padding: 15px 30px;
   border-bottom: 1px solid rgba($gold, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  /* Efeito de background opaco ao rolar a página */
+  &.scrolled {
+    background-color: rgba($black, 0.9);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
 
   .navbar-container {
     display: flex;
@@ -20,6 +28,11 @@
       img {
         height: 50px;
         width: auto;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
 
@@ -31,10 +44,22 @@
 
         li {
           margin-left: 30px;
+          position: relative;
           transition: transform 0.3s ease;
 
           &:hover {
             transform: translateY(-3px);
+
+            /* Adiciona uma barra de destaque abaixo do item de navegação */
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -5px;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background-color: $gold;
+            }
           }
 
           a {
@@ -53,33 +78,72 @@
         }
       }
     }
+
+    /* Ícone de menu para dispositivos móveis */
+    .menu-icon {
+      display: none;
+      font-size: 2rem;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+
+  /* Transição suave no efeito de scroll */
+  @media (min-width: 769px) {
+    transition: background-color 0.5s ease;
   }
 }
 
-/* Responsividade */
+/* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   .header {
     padding: 10px 20px;
 
     .navbar-container {
-      flex-direction: column;
-      align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .logo {
+        img {
+          height: 40px;
+        }
+      }
+
+      /* Ícone do menu hamburguer */
+      .menu-icon {
+        display: block;
+      }
 
       .nav {
-        margin-top: 15px;
+        display: none; /* Menu será oculto por padrão no mobile */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba($black, 0.95);
+        width: 100%;
+        text-align: right;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
         .nav-links {
           flex-direction: column;
-          align-items: flex-start;
+          gap: 20px;
 
           li {
             margin: 10px 0;
+            text-align: right;
 
             a {
-              font-size: 1.2rem;
+              font-size: 1.4rem;
+              padding-right: 20px;
             }
           }
         }
+      }
+
+      /* Estilo do menu ativo quando aberto */
+      .nav.active {
+        display: flex;
       }
     }
   }

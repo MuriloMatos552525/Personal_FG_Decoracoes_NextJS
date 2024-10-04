@@ -1,11 +1,15 @@
+// variables.scss
+
 /* Variáveis de Cores */
-$primary-color: #333; /* Cor primária tradicional */
-$secondary-color: #ff9900; /* Cor secundária chamativa */
-$background-color: #f5f5f5; /* Fundo claro e neutro */
-$text-color: #333; /* Cor do texto */
+$primary-color: #000; /* Preto */
+$accent-color: #FFD700; /* Dourado */
+$hover-color: darken($accent-color, 10%);
+$background-color: #1A1A1A; /* Fundo escuro */
+$text-color: #FFFFFF; /* Branco */
+$light-gray: #CCCCCC; /* Cinza claro */
 $white: #fff;
-$black: #000; /* Definindo a cor preta */
-$gold: #FFD700; /* Definindo a cor dourada */
+$black: #000;
+$gold: #FFD700;
 
 /* Mixin para Centralização */
 @mixin flex-center {

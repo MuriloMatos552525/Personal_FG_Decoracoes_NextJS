@@ -1,14 +1,21 @@
-@import './variables';
+// index.module.scss
 
-/* Hero Section */
+// Importar variáveis e mixins
+@import '../styles/variables';
+
+// Mixins específicos (se necessário)
+@mixin transition($properties...) {
+  transition: $properties 0.3s ease-in-out;
+}
+
+// Estilos para as seções
+
+// Seção Hero
 .hero-section {
   position: relative;
   height: 100vh;
-  background-color: $black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $white;
+  overflow: hidden;
+  @include flex-center;
   text-align: center;
 
   .background-video {
@@ -18,488 +25,492 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5;
     z-index: -1;
   }
 
   .hero-content {
     max-width: 800px;
-    margin: 0 auto;
+    padding: 0 20px;
 
     h1 {
       font-size: 3rem;
-      font-weight: 700;
       margin-bottom: 20px;
+      color: $accent-color; // Usando a cor de destaque definida em variables.scss
+      text-transform: uppercase;
     }
 
     p {
       font-size: 1.2rem;
-      margin-bottom: 40px;
-      color: lighten($white, 20%);
+      margin-bottom: 30px;
+      color: $text-color;
     }
 
     .cta-button {
-      background-color: $gold;
+      background-color: $accent-color;
       color: $black;
-      padding: 12px 24px;
+      padding: 15px 30px;
       font-size: 1rem;
-      border-radius: 5px;
-      text-transform: uppercase;
       text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+      border-radius: 5px;
+      @include transition(background-color);
 
       &:hover {
-        background-color: darken($gold, 10%);
+        background-color: $hover-color;
       }
 
       svg {
-        margin-right: 8px;
+        margin-right: 10px;
       }
     }
   }
 }
 
-/* Services Section */
+// Seção de Serviços
 .services-section {
-  padding: 60px 20px;
-  background-color: $white;
+  padding: 80px 20px;
+  background-color: $primary-color;
+  color: $white;
   text-align: center;
 
   h2 {
     font-size: 2.5rem;
-    color: $black;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    color: $accent-color;
   }
 
   .services-description {
     font-size: 1.2rem;
-    margin-bottom: 40px;
-    color: darken($black, 20%);
+    margin-bottom: 50px;
   }
 
   .services-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
 
     .service-item {
-      flex: 1;
-      min-width: 280px;
-      padding: 20px;
-      background-color: $white;
-      border: 1px solid rgba($black, 0.1);
-      border-radius: 8px;
-      transition: transform 0.3s ease;
+      background-color: $background-color;
+      border: 1px solid $accent-color;
+      border-radius: 10px;
+      padding: 30px;
+      max-width: 300px;
+      text-align: center;
+      @include transition(transform);
 
       h3 {
         font-size: 1.5rem;
-        color: $black;
-        margin-bottom: 10px;
+        margin: 20px 0 10px;
+        color: $accent-color;
       }
 
       p {
-        font-size: 0.9rem;
-        color: darken($black, 20%);
+        font-size: 1rem;
+        color: $light-gray;
       }
 
-      &:hover {
-        transform: translateY(-5px);
+      svg {
+        color: $accent-color;
       }
     }
   }
 
-  .whatsapp-button {
-    background-color: #25d366;
-    color: $white;
-    padding: 12px 24px;
-    font-size: 1rem;
-    border-radius: 5px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin-top: 40px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+  .whatsapp-contact {
+    margin-top: 50px;
 
-    &:hover {
-      background-color: darken(#25d366, 10%);
-    }
+    .whatsapp-button {
+      background-color: $accent-color;
+      color: $black;
+      padding: 15px 30px;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      @include transition(background-color);
 
-    svg {
-      margin-right: 8px;
+      &:hover {
+        background-color: $hover-color;
+      }
+
+      svg {
+        margin-right: 10px;
+      }
     }
   }
 }
 
-/* Products Section */
+// Seção de Produtos
 .products-section {
-  padding: 60px 20px;
-  background-color: $background-color;
+  padding: 80px 20px;
   text-align: center;
 
   h2 {
     font-size: 2.5rem;
-    color: $black;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    color: $accent-color;
   }
 
   .products-description {
     font-size: 1.2rem;
-    margin-bottom: 40px;
-    color: darken($black, 20%);
+    margin-bottom: 50px;
+    color: $text-color;
   }
 
   .product-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
 
     .product-item {
-      flex: 1;
-      min-width: 280px;
+      background-color: $background-color;
+      border-radius: 10px;
       padding: 20px;
-      margin: 10px;
-      background-color: $white;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s ease;
+      max-width: 300px;
+      text-align: center;
+      color: $white;
+      @include transition(transform);
 
       img {
         width: 100%;
-        height: auto;
-        margin-bottom: 15px;
-      }
-
-      h3 {
-        font-size: 1.4rem;
-        margin-bottom: 10px;
-      }
-
-      p {
-        font-size: 0.9rem;
+        border-radius: 10px;
         margin-bottom: 20px;
       }
 
-      .detalhes-button {
-        background-color: $gold;
-        color: $black;
-        padding: 8px 16px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 0.9rem;
-        display: inline-block;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color: darken($gold, 10%);
-        }
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: $accent-color;
       }
 
-      &:hover {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        color: $light-gray;
+      }
+
+      .detalhes-button {
+        background-color: $accent-color;
+        color: $black;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        @include transition(background-color);
+
+        &:hover {
+          background-color: $hover-color;
+        }
       }
     }
   }
 
   .whatsapp-contact {
-    margin-top: 40px;
+    margin-top: 50px;
 
     .whatsapp-button {
-      background-color: #25d366;
-      color: $white;
-      padding: 12px 24px;
+      background-color: $accent-color;
+      color: $black;
+      padding: 15px 30px;
       font-size: 1rem;
-      border-radius: 5px;
-      text-transform: uppercase;
       text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+      border-radius: 5px;
+      @include transition(background-color);
 
       &:hover {
-        background-color: darken(#25d366, 10%);
-      }
-
-      svg {
-        margin-right: 8px;
+        background-color: $hover-color;
       }
     }
   }
 }
 
-/* Trends Section */
+// Seção de Tendências
 .trends-section {
-  padding: 60px 20px;
-  background-color: $white;
+  padding: 80px 20px;
+  background-color: $primary-color;
+  color: $white;
   text-align: center;
 
   h2 {
     font-size: 2.5rem;
-    color: $black;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    color: $accent-color;
   }
 
   .trends-description {
     font-size: 1.2rem;
-    margin-bottom: 40px;
-    color: darken($black, 20%);
+    margin-bottom: 50px;
+    color: $light-gray;
   }
 
   .trend-items {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 40px;
 
     .trend-item {
-      flex: 1;
-      min-width: 280px;
-      padding: 20px;
-      margin: 10px;
       background-color: $background-color;
-      border-radius: 5px;
-      transition: transform 0.3s ease;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 300px;
+      text-align: center;
+      color: $white;
+      @include transition(transform);
 
       img {
         width: 100%;
-        height: auto;
-        margin-bottom: 15px;
-      }
-
-      h3 {
-        font-size: 1.4rem;
-        margin-bottom: 10px;
-      }
-
-      p {
-        font-size: 0.9rem;
+        border-radius: 10px;
         margin-bottom: 20px;
       }
 
-      &:hover {
-        transform: translateY(-5px);
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: $accent-color;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        color: $light-gray;
+      }
+
+      .detalhes-button {
+        background-color: $accent-color;
+        color: $black;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        @include transition(background-color);
+
+        &:hover {
+          background-color: $hover-color;
+        }
       }
     }
   }
 
   .whatsapp-contact {
-    margin-top: 40px;
+    margin-top: 50px;
 
     .whatsapp-button {
-      background-color: #25d366;
-      color: $white;
-      padding: 12px 24px;
+      background-color: $accent-color;
+      color: $black;
+      padding: 15px 30px;
       font-size: 1rem;
-      border-radius: 5px;
-      text-transform: uppercase;
       text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+      border-radius: 5px;
+      @include transition(background-color);
 
       &:hover {
-        background-color: darken(#25d366, 10%);
+        background-color: $hover-color;
       }
 
       svg {
-        margin-right: 8px;
+        margin-right: 10px;
       }
     }
   }
 }
 
-/* Projects Section */
+// Seção de Projetos
 .projects-section {
-  padding: 60px 20px;
-  background-color: $background-color;
+  padding: 80px 20px;
   text-align: center;
+  background-image: url('/images/projects-background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: $white;
 
   h2 {
     font-size: 2.5rem;
-    color: $black;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    color: $accent-color;
   }
 
   .projects-description {
     font-size: 1.2rem;
-    margin-bottom: 40px;
-    color: darken($black, 20%);
+    margin-bottom: 50px;
+    color: $light-gray;
   }
 
   .project-item {
     img {
       width: 100%;
-      height: auto;
       border-radius: 10px;
-      margin-bottom: 20px;
     }
 
     h3 {
       font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: $gold;
+      margin-top: 10px;
+      color: $accent-color;
     }
   }
 
   .whatsapp-contact {
-    margin-top: 40px;
+    margin-top: 50px;
 
     .whatsapp-button {
-      background-color: #25d366;
-      color: $white;
-      padding: 12px 24px;
+      background-color: $accent-color;
+      color: $black;
+      padding: 15px 30px;
       font-size: 1rem;
-      border-radius: 5px;
-      text-transform: uppercase;
       text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+      border-radius: 5px;
+      @include transition(background-color);
 
       &:hover {
-        background-color: darken(#25d366, 10%);
+        background-color: $hover-color;
       }
 
       svg {
-        margin-right: 8px;
+        margin-right: 10px;
       }
     }
   }
 }
 
-/* Testimonials Section */
+// Seção de Depoimentos
 .testimonials-section {
-  padding: 60px 20px;
-  background-color: $white;
-  color: $black;
+  padding: 80px 20px;
+  background-color: $background-color;
+  color: $white;
   text-align: center;
 
   h2 {
     font-size: 2.5rem;
-    color: $black;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    color: $accent-color;
   }
 
   .testimonial-item {
-    padding: 20px;
-    background-color: $background-color;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
 
     p {
       font-size: 1.2rem;
-      margin-bottom: 10px;
+      font-style: italic;
+      margin-bottom: 20px;
     }
 
     h4 {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: $gold;
+      font-size: 1rem;
+      color: $accent-color;
     }
   }
 }
 
-/* Contact Section */
+// Seção de Contato
 .contact-section {
-  padding: 60px 20px;
-  background-color: $black;
+  padding: 80px 20px;
   text-align: center;
-  color: $white;
 
   h2 {
     font-size: 2.5rem;
-    color: $gold;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    color: $accent-color;
   }
 
   .contact-description {
     font-size: 1.2rem;
-    margin-bottom: 40px;
-    color: lighten($white, 20%);
+    margin-bottom: 50px;
+    color: $text-color;
   }
 
-  form {
+  .contact-form {
     max-width: 600px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-gap: 20px;
 
     input,
     textarea {
-      padding: 12px;
-      margin-bottom: 20px;
+      padding: 15px;
       font-size: 1rem;
-      border: 1px solid rgba($white, 0.2);
+      border: 1px solid $accent-color;
       border-radius: 5px;
       background-color: $background-color;
-
-      &:focus {
-        border-color: $gold;
-      }
+      color: $white;
     }
 
     button {
-      background-color: $gold;
+      background-color: $accent-color;
       color: $black;
-      padding: 12px 24px;
+      padding: 15px;
       font-size: 1rem;
-      font-weight: bold;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      @include transition(background-color);
 
       &:hover {
-        background-color: darken($gold, 10%);
+        background-color: $hover-color;
       }
     }
   }
 
   .whatsapp-contact {
-    margin-top: 40px;
+    margin-top: 50px;
 
     .whatsapp-button {
-      background-color: #25d366;
-      color: $white;
-      padding: 12px 24px;
+      background-color: $accent-color;
+      color: $black;
+      padding: 15px 30px;
       font-size: 1rem;
-      border-radius: 5px;
-      text-transform: uppercase;
       text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+      border-radius: 5px;
+      @include transition(background-color);
 
       &:hover {
-        background-color: darken(#25d366, 10%);
+        background-color: $hover-color;
       }
 
       svg {
-        margin-right: 8px;
+        margin-right: 10px;
       }
     }
   }
 }
 
-/* Floating WhatsApp Button */
+// Botão flutuante de WhatsApp
 .whatsapp-floating {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25d366;
+  background-color: #25D366; // Verde do WhatsApp
   color: $white;
-  font-size: 2rem;
-  padding: 15px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
+  @include flex-center;
+  font-size: 2rem;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  @include transition(transform);
 
   &:hover {
-    background-color: darken(#25d366, 10%);
-  }
-
-  svg {
-    display: block;
+    transform: scale(1.1);
   }
 }
 
-/* Responsividade */
+// Responsividade
 @media (max-width: 768px) {
+  .hero-content {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
   .services-container,
   .product-items,
   .trend-items {
@@ -507,11 +518,16 @@
     align-items: center;
   }
 
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
+  .contact-form {
+    grid-gap: 10px;
 
-  .hero-content p {
-    font-size: 1.1rem;
+    input,
+    textarea {
+      font-size: 0.9rem;
+    }
+
+    button {
+      font-size: 0.9rem;
+    }
   }
 }

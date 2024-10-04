@@ -24,13 +24,6 @@ const testimonials = [
   { id: 3, name: 'Carlos Oliveira', feedback: 'Profissionalismo e dedicação em cada detalhe do projeto.' },
 ];
 
-// Dados dos parceiros (mantidos como antes)
-const partners = [
-  { id: 1, name: 'Arquitetura XYZ', logo: '/images/partner1.png' },
-  { id: 2, name: 'Design ABC', logo: '/images/partner2.png' },
-  { id: 3, name: 'Construções LMN', logo: '/images/partner3.png' },
-];
-
 // Número de WhatsApp para ser usado em todos os botões
 const whatsappNumber = '5511999999999';
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=Olá, gostaria de mais informações sobre seus produtos!`;
@@ -66,7 +59,7 @@ const HomePage: React.FC = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            Na FG Decorações, oferecemos uma seleção premium de mármores e granitos que elevam a sofisticação e durabilidade de qualquer projeto.
+            No Grupo FG Decorações, oferecemos uma seleção premium de mármores e granitos que elevam a sofisticação e durabilidade de qualquer projeto.
           </motion.p>
           <motion.div
             initial={{ scale: 0 }}
@@ -122,16 +115,16 @@ const HomePage: React.FC = () => {
               <img src={product.imagem} alt={product.nome} />
               <h3>{product.nome}</h3>
               <p>{product.descricao}</p>
-              <Link href={`/produto/${product.id}`} className={styles['detalhes-button']}>
-                Saiba Mais
+              <Link href={`/produto/${product.id}`}>
+                <button className={styles['detalhes-button']}>Saiba Mais</button>
               </Link>
             </motion.div>
           ))}
         </div>
         <div className={styles['whatsapp-contact']}>
-          <a href={whatsappLink} target="_blank" className={styles['whatsapp-button']} rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faWhatsapp} /> Fale Conosco Agora no WhatsApp
-          </a>
+          <Link href="/produtos">
+            <button className={styles['whatsapp-button']}>Ver Todos os Produtos</button>
+          </Link>
         </div>
       </section>
 
@@ -147,8 +140,8 @@ const HomePage: React.FC = () => {
               <img src={trend.imagem} alt={trend.nome} />
               <h3>{trend.nome}</h3>
               <p>{trend.descricao}</p>
-              <Link href={`/produto/${trend.id}`} className={styles['detalhes-button']}>
-                Saiba Mais
+              <Link href={`/produto/${trend.id}`}>
+                <button className={styles['detalhes-button']}>Saiba Mais</button>
               </Link>
             </motion.div>
           ))}

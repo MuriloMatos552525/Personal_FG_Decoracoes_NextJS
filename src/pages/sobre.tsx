@@ -1,23 +1,72 @@
-// src/pages/sobre.tsx
-
 import React from 'react';
+import Header from '../components/Header'; // Importando o Header
+import Footer from '../components/Footer'; // Importando o Footer
 import styles from '../styles/sobre.module.scss';
 
 const SobrePage: React.FC = () => {
   return (
-    <div className={styles['sobre-page']}>
-      <h1>Sobre o Grupo FG Decorações</h1>
-      <p>
-        O Grupo FG Decorações é referência em pedras naturais de alta qualidade, oferecendo uma ampla
-        variedade de quartzitos, mármores e granitos para transformar seus projetos em realidade.
-        Nosso compromisso é com a excelência e a satisfação de nossos clientes.
-      </p>
-      <p>
-        Com anos de experiência no mercado, contamos com uma equipe especializada pronta para
-        oferecer consultoria personalizada, ajudando você a escolher o material ideal para o seu
-        projeto, seja ele residencial, comercial ou corporativo.
-      </p>
-    </div>
+    <>
+      <Header /> {/* Header adicionado */}
+      <div className={styles['sobre-page']}>
+        <section className={styles['hero-section']}>
+          <div className={styles['hero-content']}>
+            <h1>Sobre o Grupo FG Decorações</h1>
+            <p>Transformando espaços com pedras naturais de alta qualidade e elegância incomparável.</p>
+          </div>
+        </section>
+
+        <section className={styles['about-section']}>
+          <div className={styles['container']}>
+            <h2>Nossa Missão</h2>
+            <p>
+              O Grupo FG Decorações tem como missão fornecer as melhores pedras naturais para projetos
+              de arquitetura e design de interiores, proporcionando beleza e durabilidade em cada detalhe.
+            </p>
+
+            <h2>Nossos Valores</h2>
+            <p>
+              Qualidade, confiança e excelência no atendimento. Trabalhamos para superar as expectativas
+              de nossos clientes, trazendo soluções sofisticadas e personalizadas.
+            </p>
+
+            <h2>Por que Escolher o FG Decorações?</h2>
+            <ul>
+              <li>Equipe especializada em pedras naturais</li>
+              <li>Ampla variedade de mármores, quartzitos e granitos</li>
+              <li>Consultoria personalizada para cada projeto</li>
+              <li>Compromisso com a satisfação total do cliente</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className={styles['team-section']}>
+          <div className={styles['container']}>
+            <h2>Conheça Nossa Equipe</h2>
+            <p>
+              Contamos com uma equipe de especialistas que está pronta para transformar suas ideias em realidade. Nosso time está à disposição para ajudá-lo em todas as etapas do projeto.
+            </p>
+            <div className={styles['team-grid']}>
+              <div className={styles['team-member']}>
+                <img src="/images/team-member1.jpg" alt="Membro da equipe" />
+                <h3>João Silva</h3>
+                <p>Especialista em Mármore</p>
+              </div>
+              <div className={styles['team-member']}>
+                <img src="/images/team-member2.jpg" alt="Membro da equipe" />
+                <h3>Maria Souza</h3>
+                <p>Consultora de Projetos</p>
+              </div>
+              <div className={styles['team-member']}>
+                <img src="/images/team-member3.jpg" alt="Membro da equipe" />
+                <h3>Carlos Oliveira</h3>
+                <p>Especialista em Granito</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <Footer /> {/* Footer adicionado */}
+    </>
   );
 };
 

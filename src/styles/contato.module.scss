@@ -1,45 +1,113 @@
-/* src/styles/contato.module.scss */
-
 .contato-page {
-    padding: 50px 20px;
-    text-align: center;
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
+  padding: 50px 20px;
+  text-align: center;
+  background-image: linear-gradient(135deg, #f0f4f8, #dfe9f3);
+  min-height: 100vh;
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    color: #34495e;
+  }
+
+  .contato-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.02);
     }
-    p {
-      font-size: 1.5em;
-      margin-bottom: 40px;
-    }
-    .contato-opcoes {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      .contato-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #000;
-        color: #fff;
-        padding: 15px 30px;
-        margin: 10px 0;
-        text-decoration: none;
+
+    .form-group {
+      width: 100%;
+      text-align: left;
+
+      label {
         font-size: 1.2em;
-        width: 300px;
-        &:hover {
-          background-color: #444;
-        }
-        svg {
-          margin-right: 10px;
+        margin-bottom: 8px;
+        display: block;
+        color: #2c3e50;
+        font-weight: 500;
+      }
+
+      input, select, textarea {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.1em;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:focus {
+          border-color: #3498db;
+          box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
         }
       }
-      .contato-telefone {
-        font-size: 1.2em;
-        margin-top: 20px;
-        svg {
-          margin-right: 10px;
-        }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+    }
+
+    .contato-button {
+      background-color: #34db5b;
+      color: #fff;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.3em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+
+      svg {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background-color: #2980b9;
+        transform: translateY(-3px);
+      }
+
+      &:focus {
+        outline: none;
+        background-color: #35b929;
       }
     }
   }
-  
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5em;
+    }
+
+    .contato-form {
+      padding: 25px;
+    }
+
+    .form-group {
+      input, select, textarea {
+        font-size: 1em;
+      }
+    }
+  }
+}
