@@ -1,3 +1,5 @@
+// src/styles/Header.module.scss
+
 @import './variables'; // Certifique-se de que suas variáveis de cores estejam corretamente configuradas
 
 .header {
@@ -6,7 +8,7 @@
   width: 100%;
   background-color: $black;
   z-index: 1000;
-  padding: 15px 30px;
+  padding: 10px 30px; // Reduzido de 15px para 10px
   border-bottom: 1px solid rgba($gold, 0.2);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -26,7 +28,7 @@
 
     .logo {
       img {
-        height: 50px;
+        height: 100px; // Aumentado de 85px para 100px
         width: auto;
         transition: transform 0.3s ease;
 
@@ -97,7 +99,7 @@
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   .header {
-    padding: 10px 20px;
+    padding: 8px 20px; // Reduzido de 10px para 8px
 
     .navbar-container {
       flex-direction: row;
@@ -105,7 +107,7 @@
 
       .logo {
         img {
-          height: 40px;
+          height: 60px; // Aumentado de 40px para 60px
         }
       }
 
@@ -124,6 +126,11 @@
         text-align: right;
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        align-items: flex-end;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
 
         .nav-links {
           flex-direction: column;
@@ -144,7 +151,41 @@
       /* Estilo do menu ativo quando aberto */
       .nav.active {
         display: flex;
+        opacity: 1;
+        transform: translateY(0);
       }
     }
+  }
+}
+
+/* Botão flutuante de WhatsApp (mantido do SCSS anterior) */
+.whatsappFloating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366; // Verde do WhatsApp
+  color: $white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    bottom: 15px;
+    right: 15px;
   }
 }
