@@ -1,6 +1,6 @@
 // src/styles/Header.module.scss
 
-@import './variables'; // Certifique-se de que suas variáveis de cores estejam corretamente configuradas
+@import './variables';
 
 .header {
   position: fixed;
@@ -8,12 +8,11 @@
   width: 100%;
   background-color: $black;
   z-index: 1000;
-  padding: 10px 30px; // Reduzido de 15px para 10px
+  padding: 10px 30px;
   border-bottom: 1px solid rgba($gold, 0.2);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
-  /* Efeito de background opaco ao rolar a página */
   &.scrolled {
     background-color: rgba($black, 0.9);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
@@ -26,15 +25,12 @@
     max-width: 1200px;
     margin: 0 auto;
 
-    .logo {
-      img {
-        height: 100px; // Aumentado de 85px para 100px
-        width: auto;
-        transition: transform 0.3s ease;
+    .logo img {
+      height: 100px;
+      transition: transform 0.3s ease;
 
-        &:hover {
-          transform: scale(1.1);
-        }
+      &:hover {
+        transform: scale(1.1);
       }
     }
 
@@ -47,22 +43,6 @@
         li {
           margin-left: 30px;
           position: relative;
-          transition: transform 0.3s ease;
-
-          &:hover {
-            transform: translateY(-3px);
-
-            /* Adiciona uma barra de destaque abaixo do item de navegação */
-            &::after {
-              content: '';
-              position: absolute;
-              bottom: -5px;
-              left: 0;
-              width: 100%;
-              height: 2px;
-              background-color: $gold;
-            }
-          }
 
           a {
             color: $white;
@@ -71,7 +51,6 @@
             text-transform: uppercase;
             font-weight: 500;
             letter-spacing: 0.05em;
-            transition: color 0.3s ease;
 
             &:hover {
               color: $gold;
@@ -81,7 +60,6 @@
       }
     }
 
-    /* Ícone de menu para dispositivos móveis */
     .menu-icon {
       display: none;
       font-size: 2rem;
@@ -90,34 +68,21 @@
     }
   }
 
-  /* Transição suave no efeito de scroll */
-  @media (min-width: 769px) {
-    transition: background-color 0.5s ease;
-  }
-}
-
-/* Responsividade para dispositivos móveis */
-@media (max-width: 768px) {
-  .header {
-    padding: 8px 20px; // Reduzido de 10px para 8px
+  /* Responsividade para dispositivos móveis */
+  @media (max-width: 768px) {
+    padding: 8px 20px;
 
     .navbar-container {
-      flex-direction: row;
-      justify-content: space-between;
-
-      .logo {
-        img {
-          height: 60px; // Aumentado de 40px para 60px
-        }
+      .logo img {
+        height: 60px;
       }
 
-      /* Ícone do menu hamburguer */
       .menu-icon {
         display: block;
       }
 
       .nav {
-        display: none; /* Menu será oculto por padrão no mobile */
+        display: none;
         position: absolute;
         top: 60px;
         right: 0;
@@ -148,44 +113,12 @@
         }
       }
 
-      /* Estilo do menu ativo quando aberto */
+      /* Exibe o menu ao ativar a classe `active` */
       .nav.active {
         display: flex;
         opacity: 1;
         transform: translateY(0);
       }
     }
-  }
-}
-
-/* Botão flutuante de WhatsApp (mantido do SCSS anterior) */
-.whatsappFloating {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366; // Verde do WhatsApp
-  color: $white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  text-decoration: none;
-  z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-
-  @media (max-width: 768px) {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    bottom: 15px;
-    right: 15px;
   }
 }

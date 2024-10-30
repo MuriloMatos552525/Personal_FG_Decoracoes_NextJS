@@ -190,7 +190,7 @@ const HomePage: React.FC = () => {
           <Slider {...settings}>
             <div className={styles.projectItem}>
               <img src="/images/projeto-1.jpg" alt="Projeto 1" className={styles.projectImage} />
-              <h3>Piso de piscina com Pedra Serrada goias verde qualidade BA</h3>
+              <h3>Piso de piscina com Pedra Serrada Goias verde qualidade BA</h3>
             </div>
             <div className={styles.projectItem}>
               <img src="/images/projeto-2.jpg" alt="Projeto 2" className={styles.projectImage} />

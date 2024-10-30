@@ -1,9 +1,8 @@
-// src/components/Header.tsx
-
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -20,29 +19,24 @@ const Header: React.FC = () => {
     };
 
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        navRef.current &&
-        !navRef.current.contains(event.target as Node) &&
-        menuOpen
-      ) {
+      if (navRef.current && !navRef.current.contains(event.target as Node) && menuOpen) {
         setMenuOpen(false);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousedown', handleClickOutside);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [menuOpen]);
 
-  // Função para alternar o menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  // Função para fechar o menu quando um link é clicado
   const closeMenu = () => {
     setMenuOpen(false);
   };
@@ -55,10 +49,9 @@ const Header: React.FC = () => {
             <img src="/images/logo.png" alt="Logo FG Decorações" />
           </Link>
         </div>
-        <nav
-          ref={navRef}
-          className={`${styles.nav} ${menuOpen ? styles.active : ''}`}
-        >
+
+        {/* Menu de navegação */}
+        <nav ref={navRef} className={`${styles.nav} ${menuOpen ? styles.active : ''}`}>
           <ul className={styles['nav-links']}>
             <li>
               <Link href="/" onClick={closeMenu}>
@@ -82,8 +75,10 @@ const Header: React.FC = () => {
             </li>
           </ul>
         </nav>
+
+        {/* Ícone do menu hambúrguer para dispositivos móveis */}
         <div className={styles['menu-icon']} onClick={toggleMenu}>
-          <FontAwesomeIcon icon={menuOpen ? 'times' : 'bars'} />
+          <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} />
         </div>
       </div>
     </header>
