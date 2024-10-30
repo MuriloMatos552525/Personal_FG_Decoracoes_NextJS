@@ -74,19 +74,19 @@ const HomePage: React.FC = () => {
       {/* Seção de Destaque para Pedra São Tomé */}
       <section className={styles.saoTomeSection}>
         <div className={styles.container}>
-          <h2>Pedra São Tomé</h2>
+          <h2>Pedra Goias</h2>
           <div className={styles.saoTomeContent}>
-            <img src="/images/pedras/pedra-sao-tome.jpg" alt="Pedra São Tomé" className={styles.saoTomeImage} />
+            <img src="/images/pedras/pedra-sao-tome.jpg" alt="Pedra Goias" className={styles.saoTomeImage} />
             <div className={styles.saoTomeInfo}>
               <p>
-                A Pedra São Tomé é nossa mais vendida, reconhecida por sua beleza única, durabilidade excepcional e versatilidade em diversos projetos de arquitetura e design de interiores.
+                A Pedra goias é nossa mais vendida, reconhecida por sua beleza única, durabilidade excepcional e versatilidade em diversos projetos de arquitetura e design de interiores.
               </p>
               <ul className={styles.saoTomeFeatures}>
                 <li><FontAwesomeIcon icon={faStar} className={styles.starIcon} /> Alta durabilidade</li>
                 <li><FontAwesomeIcon icon={faStar} className={styles.starIcon} /> Variedade de acabamentos</li>
                 <li><FontAwesomeIcon icon={faStar} className={styles.starIcon} /> Estética sofisticada</li>
               </ul>
-              <Link href="/produto/7" className={styles.detailsButton}>
+              <Link href="/produto/18" className={styles.detailsButton}>
                 Saiba Mais
               </Link>
             </div>
