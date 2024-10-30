@@ -30,8 +30,8 @@ const Footer: React.FC = () => {
         </div>
         <div className={styles['footer-contact']}>
           <h4>Contato</h4>
-          <p><FontAwesomeIcon icon={faPhone} /> (11) 1234-5678</p>
-          <p><FontAwesomeIcon icon={faWhatsapp} /> (11) 9876-5432</p>
+          <p><FontAwesomeIcon icon={faPhone} /> (11) 95825-8031</p>
+          <p><FontAwesomeIcon icon={faWhatsapp} /> (11) 95825-8031</p>
           <p><FontAwesomeIcon icon={faEnvelope} /> contato@fgdecoracoes.com.br</p>
         </div>
       </div>

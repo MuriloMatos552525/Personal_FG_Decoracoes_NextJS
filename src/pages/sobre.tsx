@@ -47,17 +47,14 @@ const SobrePage: React.FC = () => {
             </p>
             <div className={styles['team-grid']}>
               <div className={styles['team-member']}>
-                <img src="/images/team-member1.jpg" alt="Membro da equipe" />
-                <h3>João Silva</h3>
+                <h3>Rogerio Freitas</h3>
                 <p>Especialista em Mármore</p>
               </div>
               <div className={styles['team-member']}>
-                <img src="/images/team-member2.jpg" alt="Membro da equipe" />
                 <h3>Maria Souza</h3>
                 <p>Consultora de Projetos</p>
               </div>
               <div className={styles['team-member']}>
-                <img src="/images/team-member3.jpg" alt="Membro da equipe" />
                 <h3>Carlos Oliveira</h3>
                 <p>Especialista em Granito</p>
               </div>
