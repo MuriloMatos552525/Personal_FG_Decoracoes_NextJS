@@ -15,24 +15,24 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
-
+// Definindo tipos específicos para evitar o uso de `any`
 declare global {
   interface Window {
-    gtag: any;
-    dataLayer: any;
+    gtag: (event: string, action: string, params: Record<string, unknown>) => void;
+    dataLayer: Array<Record<string, unknown>>;
   }
 }
 
 const ContatoPage: React.FC = () => {
   const whatsappNumber = '5511958258031'; // Substitua pelo seu número do WhatsApp
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [tipoProjeto, setTipoProjeto] = useState('');
-  const [orcamento, setOrcamento] = useState('');
-  const [preferenciaMaterial, setPreferenciaMaterial] = useState('');
-  const [prazoEntrega, setPrazoEntrega] = useState('');
-  const [usoProduto, setUsoProduto] = useState('');
-  const [mensagem, setMensagem] = useState('');
+  const [nome, setNome] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [tipoProjeto, setTipoProjeto] = useState<string>('');
+  const [orcamento, setOrcamento] = useState<string>('');
+  const [preferenciaMaterial, setPreferenciaMaterial] = useState<string>('');
+  const [prazoEntrega, setPrazoEntrega] = useState<string>('');
+  const [usoProduto, setUsoProduto] = useState<string>('');
+  const [mensagem, setMensagem] = useState<string>('');
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
