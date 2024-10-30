@@ -1,27 +1,25 @@
-@import '../styles/variables';
-@import '../styles/index.module.scss';
-
-.produtoPage {
-  padding: 80px 20px;
-  background-color: $background-color;
-  color: $text-color;
+.produto-page {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
 
   h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: $accent-color;
+    color: #333;
     margin-bottom: 40px;
     text-align: center;
   }
 
-  .produtoDetalhes {
+  .produto-detalhes {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 
-    .produtoImagem {
+    .produto-imagem {
       width: 100%;
       max-width: 500px;
       height: auto;
@@ -29,54 +27,54 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .produtoInfo {
-      max-width: 600px;
+    .produto-info {
+      max-width: 500px;
 
       p {
         font-size: 1.2rem;
         margin-bottom: 20px;
         line-height: 1.6;
-        color: $light-gray;
+        color: #666;
 
         strong {
-          color: $text-color;
+          color: #333;
           font-weight: 600;
         }
       }
 
       h3 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         margin-top: 30px;
-        color: $accent-color;
+        color: #ff9900;
       }
 
-      .whatsappButton {
-        display: inline-flex;
-        align-items: center;
+      .whatsapp-button {
+        display: inline-block;
         padding: 12px 24px;
         background-color: #25d366;
-        color: $white;
+        color: #fff;
         border-radius: 5px;
         font-size: 1.2rem;
         font-weight: bold;
         text-decoration: none;
         transition: background-color 0.3s ease;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
+        display: flex;
+        align-items: center;
 
         svg {
           margin-right: 10px;
         }
 
         &:hover {
-          background-color: darken(#25d366, 10%);
+          background-color: #1ebe5d;
         }
       }
     }
   }
 
   @media (max-width: 768px) {
-    .produtoDetalhes {
+    .produto-detalhes {
       flex-direction: column;
       align-items: center;
     }
@@ -85,14 +83,13 @@
       font-size: 2rem;
     }
 
-    .produtoInfo {
+    .produto-info {
       p {
         font-size: 1rem;
       }
 
-      .whatsappButton {
+      .whatsapp-button {
         font-size: 1rem;
-        padding: 10px 20px;
       }
     }
   }

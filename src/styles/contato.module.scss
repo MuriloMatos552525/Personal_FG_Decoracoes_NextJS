@@ -1,56 +1,33 @@
-// src/styles/contato.module.scss
-
-// Importar variáveis e mixins
-@import '../styles/variables';
-
-// Mixins específicos (se necessário)
-@mixin transition($properties...) {
-  transition: $properties 0.3s ease-in-out;
-}
-
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// Seção de Contato
 .contato-page {
   padding: 50px 20px;
   text-align: center;
-  background-color: $background-color; // Fundo escuro
+  background-image: linear-gradient(135deg, #f0f4f8, #dfe9f3);
   min-height: 100vh;
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
 
   h1 {
     font-size: 3em;
     margin-bottom: 20px;
-    color: $text-color; // Branco
+    color: #2c3e50;
     font-weight: 700;
   }
 
   p {
     font-size: 1.4em;
     margin-bottom: 40px;
-    color: $light-gray; // Cinza claro
+    color: #34495e;
   }
 
   .contato-form {
-    background-color: $dark-gray; // Cinza escuro para destaque
+    background-color: #fff;
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); // Sombra mais intensa para contraste
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     max-width: 700px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 25px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease;
 
     &:hover {
       transform: scale(1.02);
@@ -63,37 +40,23 @@
       label {
         font-size: 1.2em;
         margin-bottom: 8px;
-        display: flex;
-        align-items: center;
-        color: $text-color; // Branco
+        display: block;
+        color: #2c3e50;
         font-weight: 500;
-
-        svg {
-          margin-right: 8px;
-          color: $accent-color; // Dourado
-        }
       }
 
-      input,
-      select,
-      textarea {
+      input, select, textarea {
         width: 100%;
         padding: 15px;
         font-size: 1.1em;
-        border: 2px solid $dark-gray; // Cinza escuro
+        border: 2px solid #ddd;
         border-radius: 8px;
-        background-color: $background-color; // Fundo escuro
-        color: $text-color; // Branco
-        @include transition(border-color, box-shadow);
-
-        &::placeholder {
-          color: $light-gray; // Cinza claro
-        }
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
         &:focus {
-          border-color: $accent-color;
-          box-shadow: 0 0 8px rgba($gold, 0.3); // Dourado com opacidade
-          outline: none;
+          border-color: #3498db;
+          box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
         }
       }
 
@@ -104,8 +67,8 @@
     }
 
     .contato-button {
-      background-color: $accent-color; // Dourado
-      color: $black; // Preto
+      background-color: #34db5b;
+      color: #fff;
       padding: 15px;
       border: none;
       border-radius: 8px;
@@ -113,7 +76,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      @include transition(background-color, transform);
+      transition: background-color 0.3s ease, transform 0.3s ease;
       cursor: pointer;
 
       svg {
@@ -121,13 +84,13 @@
       }
 
       &:hover {
-        background-color: $hover-color; // Dourado escuro
+        background-color: #2980b9;
         transform: translateY(-3px);
       }
 
       &:focus {
         outline: none;
-        background-color: darken($accent-color, 10%); // Variante mais escura do dourado
+        background-color: #35b929;
       }
     }
   }
@@ -142,9 +105,7 @@
     }
 
     .form-group {
-      input,
-      select,
-      textarea {
+      input, select, textarea {
         font-size: 1em;
       }
     }

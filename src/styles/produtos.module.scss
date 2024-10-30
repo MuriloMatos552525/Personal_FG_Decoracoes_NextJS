@@ -1,28 +1,22 @@
-@import '../styles/variables';
-@import '../styles/index.module.scss';
-
-.produtosPage {
-  padding: 80px 20px;
-  background-color: $background-color;
-  color: $text-color;
-  
+.produtos-page {
+  padding: 60px 20px;
+  background-color: #f0f0f0;
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
     text-align: center;
-    color: $accent-color;
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #333;
   }
-
-  .filtroTipos {
+  .filtro-tipos {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
-    gap: 15px;
-
     button {
+      margin: 0 15px;
       padding: 12px 25px;
-      background-color: $primary-color;
-      color: $white;
+      background-color: #000;
+      color: #fff;
       border: none;
       border-radius: 25px;
       font-size: 1.1rem;
@@ -31,89 +25,66 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
 
       &:hover {
-        background-color: lighten($primary-color, 10%);
+        background-color: #444;
         transform: translateY(-3px);
       }
 
       &.active {
-        background-color: $accent-color;
-        color: $black;
+        background-color: #ff9900;
+        color: #fff;
       }
     }
   }
-
-  .produtosGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  .produtos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
-    justify-items: center;
-  }
 
-  .produtoItem {
-    background-color: $dark-gray;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 300px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+    .produto-item {
+      background-color: #fff;
       border-radius: 10px;
-      margin-bottom: 15px;
-    }
-
-    h3 {
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: $accent-color;
-      margin-top: 10px;
-    }
-
-    p {
-      font-size: 1rem;
-      color: $light-gray;
-      margin: 10px 0;
-      flex-grow: 1;
-    }
-
-    .detalhesButton {
-      background-color: $gold;
-      color: $white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
 
       &:hover {
-        background-color: lighten($primary-color, 10%);
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       }
-    }
-  }
 
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
-    }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+      h3 {
+        margin-top: 15px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #333;
+      }
+      p {
+        margin: 10px 0;
+        font-size: 1rem;
+        color: #666;
+      }
+      .detalhes-button {
+        display: inline-block;
+        padding: 12px 20px;
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
 
-    .filtroTipos {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .produtoItem {
-      max-width: 100%;
+        &:hover {
+          background-color: #444;
+        }
+      }
     }
   }
 }

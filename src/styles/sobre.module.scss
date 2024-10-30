@@ -1,16 +1,13 @@
-@import '../styles/variables';
-@import '../styles/index.module.scss';
-
 .sobre-page {
   font-family: 'Roboto', sans-serif;
-  color: $text-color;
+  color: #333;
 
   .hero-section {
-    background-image: url('/images/hero.jpg');
+    background-image: url('/images/hero-sobre.jpg');
     background-size: cover;
     background-position: center;
-    color: $white;
-    padding: 80px 20px;
+    color: #fff;
+    padding: 60px 20px;
     text-align: center;
 
     .hero-content {
@@ -18,23 +15,20 @@
       margin: 0 auto;
 
       h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
         font-weight: 700;
-        color: $accent-color;
-        margin-bottom: 20px;
       }
 
       p {
         font-size: 1.5rem;
         margin-top: 20px;
-        color: $light-gray;
       }
     }
   }
 
   .about-section {
-    background-color: $background-color;
-    padding: 80px 20px;
+    background-color: #f5f5f5;
+    padding: 60px 20px;
 
     .container {
       max-width: 1000px;
@@ -43,7 +37,7 @@
 
       h2 {
         font-size: 2.5rem;
-        color: $accent-color;
+        color: #ff9900;
         margin-bottom: 20px;
       }
 
@@ -51,7 +45,7 @@
         font-size: 1.2rem;
         line-height: 1.8;
         margin-bottom: 40px;
-        color: $light-gray;
+        color: #666;
       }
 
       ul {
@@ -61,7 +55,7 @@
 
         li {
           margin-bottom: 10px;
-          color: $text-color;
+          color: #333;
           font-weight: 500;
         }
       }
@@ -69,8 +63,8 @@
   }
 
   .team-section {
-    background-color: $primary-color;
-    padding: 80px 20px;
+    background-color: #fff;
+    padding: 60px 20px;
 
     .container {
       max-width: 1000px;
@@ -79,7 +73,7 @@
 
       h2 {
         font-size: 2.5rem;
-        color: $accent-color;
+        color: #ff9900;
         margin-bottom: 40px;
       }
 
@@ -87,7 +81,7 @@
         font-size: 1.2rem;
         line-height: 1.8;
         margin-bottom: 40px;
-        color: $light-gray;
+        color: #666;
       }
 
       .team-grid {
@@ -110,12 +104,12 @@
           h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
-            color: $white;
+            color: #333;
           }
 
           p {
             font-size: 1.1rem;
-            color: $light-gray;
+            color: #666;
           }
         }
       }

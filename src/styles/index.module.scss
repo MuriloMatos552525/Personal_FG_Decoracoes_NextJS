@@ -1,4 +1,4 @@
-// src/styles/index.module.scss
+// index.module.scss
 
 // Importar variáveis e mixins
 @import '../styles/variables';
@@ -8,46 +8,17 @@
   transition: $properties 0.3s ease-in-out;
 }
 
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// Contêiner principal para centralizar o conteúdo
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-
-  @media (max-width: 1200px) {
-    max-width: 1000px;
-  }
-
-  @media (max-width: 992px) {
-    max-width: 960px;
-  }
-
-  @media (max-width: 768px) {
-    max-width: 720px;
-  }
-
-  @media (max-width: 576px) {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-}
+// Estilos para as seções
 
 // Seção Hero
-.heroSection {
+.hero-section {
   position: relative;
   height: 100vh;
   overflow: hidden;
   @include flex-center;
   text-align: center;
-  padding: 0 20px;
 
-  .backgroundVideo {
+  .background-video {
     position: absolute;
     top: 0;
     left: 0;
@@ -55,233 +26,47 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: brightness(0.6);
   }
 
-  .heroContent {
+  .hero-content {
     max-width: 800px;
     padding: 0 20px;
 
-    .heroTitle {
+    h1 {
       font-size: 3rem;
       margin-bottom: 20px;
-      color: $accent-color;
+      color: $accent-color; // Usando a cor de destaque definida em variables.scss
       text-transform: uppercase;
-      font-weight: bold;
-
-      @media (max-width: 768px) {
-        font-size: 2.5rem;
-      }
-
-      @media (max-width: 576px) {
-        font-size: 2rem;
-      }
     }
 
-    .heroSubtitle {
+    p {
       font-size: 1.2rem;
       margin-bottom: 30px;
       color: $text-color;
-      line-height: 1.6;
-
-      @media (max-width: 768px) {
-        font-size: 1rem;
-      }
-
-      @media (max-width: 576px) {
-        font-size: 0.9rem;
-      }
     }
 
-    .ctaButton {
+    .cta-button {
       background-color: $accent-color;
       color: $black;
       padding: 15px 30px;
       font-size: 1rem;
       text-decoration: none;
       border-radius: 5px;
-      display: inline-flex;
-      align-items: center;
-      @include transition(background-color, transform);
+      @include transition(background-color);
 
       &:hover {
         background-color: $hover-color;
-        transform: translateY(-3px);
       }
 
       svg {
         margin-right: 10px;
-      }
-    }
-
-    .heroButtonWrapper {
-      display: inline-block;
-    }
-  }
-
-  // Ajuste para dispositivos menores
-  @media (max-width: 768px) {
-    height: auto;
-    padding: 60px 20px;
-
-    .backgroundVideo {
-      height: 300px;
-    }
-
-    .heroContent {
-      .heroTitle {
-        font-size: 2.5rem;
-      }
-
-      .heroSubtitle {
-        font-size: 1rem;
-      }
-    }
-  }
-
-  @media (max-width: 576px) {
-    .backgroundVideo {
-      height: 200px;
-    }
-
-    .heroContent {
-      .heroTitle {
-        font-size: 2rem;
-      }
-
-      .heroSubtitle {
-        font-size: 0.9rem;
-      }
-
-      .ctaButton {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-      }
-    }
-  }
-}
-
-// Seção de Destaque para Pedra São Tomé
-.saoTomeSection {
-  padding: 80px 20px;
-  background-color: $background-color;
-  color: $text-color;
-
-  .container {
-    text-align: center;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: $accent-color;
-
-    @media (max-width: 576px) {
-      font-size: 2rem;
-    }
-  }
-
-  .saoTomeContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-
-    .saoTomeImage {
-      flex: 1;
-      max-width: 500px;
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .saoTomeInfo {
-      flex: 1;
-      text-align: left;
-
-      p {
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-        line-height: 1.6;
-
-        @media (max-width: 576px) {
-          font-size: 1rem;
-        }
-      }
-
-      .saoTomeFeatures {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 20px;
-
-        li {
-          display: flex;
-          align-items: center;
-          font-size: 1rem;
-          margin-bottom: 10px;
-
-          .starIcon {
-            color: $accent-color;
-            margin-right: 10px;
-          }
-        }
-      }
-
-      .detailsButton {
-        background-color: $accent-color;
-        color: $black;
-        padding: 10px 20px;
-        font-size: 1rem;
-        text-decoration: none;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        @include transition(background-color, transform);
-        display: inline-block;
-
-        &:hover {
-          background-color: $hover-color;
-          transform: translateY(-2px);
-        }
-      }
-    }
-  }
-
-  // Responsividade para São Tomé
-  @media (max-width: 768px) {
-    .saoTomeContent {
-      flex-direction: column;
-      text-align: center;
-
-      .saoTomeInfo {
-        text-align: center;
-      }
-    }
-  }
-
-  @media (max-width: 576px) {
-    padding: 60px 10px;
-
-    .saoTomeContent {
-      gap: 20px;
-
-      .saoTomeImage {
-        max-width: 100%;
-      }
-
-      .saoTomeInfo {
-        p {
-          font-size: 1rem;
-        }
       }
     }
   }
 }
 
 // Seção de Serviços
-.servicesSection {
+.services-section {
   padding: 80px 20px;
   background-color: $primary-color;
   color: $white;
@@ -291,254 +76,156 @@
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: $accent-color;
-
-    @media (max-width: 576px) {
-      font-size: 2rem;
-    }
   }
 
-  .servicesDescription {
+  .services-description {
     font-size: 1.2rem;
     margin-bottom: 50px;
-    color: $white;
-    line-height: 1.6;
-
-    @media (max-width: 576px) {
-      font-size: 1rem;
-      margin-bottom: 30px;
-    }
   }
 
-  .servicesContainer {
+  .services-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
 
-    .serviceItem {
-      background-color: rgba(255, 255, 255, 0.1);
+    .service-item {
+      background-color: $background-color;
       border: 1px solid $accent-color;
       border-radius: 10px;
       padding: 30px;
       max-width: 300px;
-      width: 100%;
       text-align: center;
-      color: $white;
-      @include transition(transform, box-shadow);
-
-      &:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      }
-
-      .serviceIcon {
-        color: $accent-color;
-        margin-bottom: 20px;
-      }
+      @include transition(transform);
 
       h3 {
         font-size: 1.5rem;
-        margin-bottom: 10px;
+        margin: 20px 0 10px;
         color: $accent-color;
-
-        @media (max-width: 576px) {
-          font-size: 1.3rem;
-        }
       }
 
       p {
         font-size: 1rem;
         color: $light-gray;
-        line-height: 1.5;
+      }
 
-        @media (max-width: 576px) {
-          font-size: 0.9rem;
-        }
+      svg {
+        color: $accent-color;
       }
     }
   }
 
-  .whatsappContact {
+  .whatsapp-contact {
     margin-top: 50px;
 
-    .whatsappButton {
+    .whatsapp-button {
       background-color: $accent-color;
       color: $black;
       padding: 15px 30px;
       font-size: 1rem;
       text-decoration: none;
       border-radius: 5px;
-      @include transition(background-color, transform);
-      display: inline-flex;
-      align-items: center;
+      @include transition(background-color);
 
       &:hover {
         background-color: $hover-color;
-        transform: translateY(-3px);
       }
 
       svg {
         margin-right: 10px;
       }
-
-      @media (max-width: 576px) {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-      }
-    }
-  }
-
-  @media (max-width: 576px) {
-    padding: 60px 10px;
-
-    .servicesContainer {
-      gap: 20px;
     }
   }
 }
 
 // Seção de Produtos
-.productsSection {
+.products-section {
   padding: 80px 20px;
   text-align: center;
-  background-color: $background-color;
 
   h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: $accent-color;
-
-    @media (max-width: 576px) {
-      font-size: 2rem;
-    }
   }
 
-  .productsDescription {
+  .products-description {
     font-size: 1.2rem;
     margin-bottom: 50px;
     color: $text-color;
-    line-height: 1.6;
-
-    @media (max-width: 576px) {
-      font-size: 1rem;
-      margin-bottom: 30px;
-    }
   }
 
-  .productItems {
+  .product-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
 
-    .productItem {
-      background-color: $dark-gray;
+    .product-item {
+      background-color: $background-color;
       border-radius: 10px;
       padding: 20px;
       max-width: 300px;
-      width: 100%;
       text-align: center;
-      color: $text-color;
-      @include transition(transform, box-shadow);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: $white;
+      @include transition(transform);
 
-      &:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      }
-
-      .productImage {
+      img {
         width: 100%;
-        height: 200px;
-        object-fit: cover;
         border-radius: 10px;
         margin-bottom: 20px;
-
-        @media (max-width: 576px) {
-          height: 150px;
-        }
       }
 
       h3 {
         font-size: 1.5rem;
         margin-bottom: 10px;
         color: $accent-color;
-
-        @media (max-width: 576px) {
-          font-size: 1.3rem;
-        }
       }
 
       p {
         font-size: 1rem;
         margin-bottom: 20px;
         color: $light-gray;
-        line-height: 1.5;
-
-        @media (max-width: 576px) {
-          font-size: 0.9rem;
-        }
       }
 
-      .detailsButton {
+      .detalhes-button {
         background-color: $accent-color;
         color: $black;
         padding: 10px 20px;
         font-size: 1rem;
-        text-decoration: none;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        @include transition(background-color, transform);
-        display: inline-block;
+        @include transition(background-color);
 
         &:hover {
           background-color: $hover-color;
-          transform: translateY(-2px);
-        }
-
-        @media (max-width: 576px) {
-          padding: 8px 16px;
-          font-size: 0.9rem;
         }
       }
     }
   }
 
-  .whatsappContact {
+  .whatsapp-contact {
     margin-top: 50px;
 
-    .whatsappButton {
+    .whatsapp-button {
       background-color: $accent-color;
       color: $black;
       padding: 15px 30px;
       font-size: 1rem;
       text-decoration: none;
       border-radius: 5px;
-      @include transition(background-color, transform);
-      display: inline-block;
+      @include transition(background-color);
 
       &:hover {
         background-color: $hover-color;
-        transform: translateY(-3px);
       }
-
-      @media (max-width: 576px) {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-      }
-    }
-  }
-
-  @media (max-width: 576px) {
-    padding: 60px 10px;
-
-    .productItems {
-      gap: 20px;
     }
   }
 }
 
 // Seção de Tendências
-.trendsSection {
+.trends-section {
   padding: 80px 20px;
   background-color: $primary-color;
   color: $white;
@@ -548,144 +235,89 @@
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: $accent-color;
-
-    @media (max-width: 576px) {
-      font-size: 2rem;
-    }
   }
 
-  .trendsDescription {
+  .trends-description {
     font-size: 1.2rem;
     margin-bottom: 50px;
-    color: $white;
-    line-height: 1.6;
-
-    @media (max-width: 576px) {
-      font-size: 1rem;
-      margin-bottom: 30px;
-    }
+    color: $light-gray;
   }
 
-  .trendItems {
+  .trend-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
 
-    .trendItem {
-      background-color: rgba(255, 255, 255, 0.1);
+    .trend-item {
+      background-color: $background-color;
       border-radius: 10px;
       padding: 20px;
       max-width: 300px;
-      width: 100%;
       text-align: center;
       color: $white;
-      @include transition(transform, box-shadow);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      @include transition(transform);
 
-      &:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      }
-
-      .trendImage {
+      img {
         width: 100%;
-        height: 200px;
-        object-fit: cover;
         border-radius: 10px;
         margin-bottom: 20px;
-
-        @media (max-width: 576px) {
-          height: 150px;
-        }
       }
 
       h3 {
         font-size: 1.5rem;
         margin-bottom: 10px;
         color: $accent-color;
-
-        @media (max-width: 576px) {
-          font-size: 1.3rem;
-        }
       }
 
       p {
         font-size: 1rem;
         margin-bottom: 20px;
         color: $light-gray;
-        line-height: 1.5;
-
-        @media (max-width: 576px) {
-          font-size: 0.9rem;
-        }
       }
 
-      .detailsButton {
+      .detalhes-button {
         background-color: $accent-color;
         color: $black;
         padding: 10px 20px;
         font-size: 1rem;
-        text-decoration: none;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        @include transition(background-color, transform);
-        display: inline-block;
+        @include transition(background-color);
 
         &:hover {
           background-color: $hover-color;
-          transform: translateY(-2px);
-        }
-
-        @media (max-width: 576px) {
-          padding: 8px 16px;
-          font-size: 0.9rem;
         }
       }
     }
   }
 
-  .whatsappContact {
+  .whatsapp-contact {
     margin-top: 50px;
 
-    .whatsappButton {
+    .whatsapp-button {
       background-color: $accent-color;
       color: $black;
       padding: 15px 30px;
       font-size: 1rem;
       text-decoration: none;
       border-radius: 5px;
-      @include transition(background-color, transform);
-      display: inline-flex;
-      align-items: center;
+      @include transition(background-color);
 
       &:hover {
         background-color: $hover-color;
-        transform: translateY(-3px);
       }
 
       svg {
         margin-right: 10px;
       }
-
-      @media (max-width: 576px) {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-      }
-    }
-  }
-
-  @media (max-width: 576px) {
-    padding: 60px 10px;
-
-    .trendItems {
-      gap: 20px;
     }
   }
 }
 
 // Seção de Projetos
-.projectsSection {
+.projects-section {
   padding: 80px 20px;
   text-align: center;
   background-image: url('/images/projects-background.jpg');
@@ -694,206 +326,103 @@
   background-position: center;
   color: $white;
 
-  .container {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 10px;
-
-    @media (max-width: 768px) {
-      padding: 20px;
-    }
-  }
-
   h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: $accent-color;
-
-    @media (max-width: 576px) {
-      font-size: 2rem;
-    }
   }
 
-  .projectsDescription {
+  .projects-description {
     font-size: 1.2rem;
     margin-bottom: 50px;
     color: $light-gray;
-    line-height: 1.6;
-
-    @media (max-width: 576px) {
-      font-size: 1rem;
-      margin-bottom: 30px;
-    }
   }
 
-  .projectItem {
-    position: relative;
-    margin-bottom: 30px;
-
-    .projectImage {
+  .project-item {
+    img {
       width: 100%;
-      height: 300px;
-      object-fit: cover;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      margin-bottom: 10px;
-
-      @media (max-width: 768px) {
-        height: 200px;
-      }
-
-      @media (max-width: 576px) {
-        height: 150px;
-      }
     }
 
     h3 {
       font-size: 1.5rem;
+      margin-top: 10px;
       color: $accent-color;
-
-      @media (max-width: 576px) {
-        font-size: 1.3rem;
-      }
     }
   }
 
-  .whatsappContact {
+  .whatsapp-contact {
     margin-top: 50px;
 
-    .whatsappButton {
+    .whatsapp-button {
       background-color: $accent-color;
       color: $black;
       padding: 15px 30px;
       font-size: 1rem;
       text-decoration: none;
       border-radius: 5px;
-      @include transition(background-color, transform);
-      display: inline-flex;
-      align-items: center;
+      @include transition(background-color);
 
       &:hover {
         background-color: $hover-color;
-        transform: translateY(-3px);
       }
 
       svg {
         margin-right: 10px;
       }
-
-      @media (max-width: 576px) {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    background-attachment: scroll;
-  }
-
-  @media (max-width: 576px) {
-    padding: 60px 10px;
-
-    .container {
-      padding: 20px;
-    }
-
-    .projectsDescription {
-      font-size: 1rem;
-      margin-bottom: 30px;
     }
   }
 }
 
 // Seção de Depoimentos
-.testimonialsSection {
+.testimonials-section {
   padding: 80px 20px;
   background-color: $background-color;
-  color: $text-color;
+  color: $white;
   text-align: center;
-
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
 
   h2 {
     font-size: 2.5rem;
     margin-bottom: 50px;
     color: $accent-color;
-
-    @media (max-width: 576px) {
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
   }
 
-  .testimonialItem {
+  .testimonial-item {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 30px;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 10px;
 
     p {
       font-size: 1.2rem;
       font-style: italic;
       margin-bottom: 20px;
-      color: $dark-gray;
-      line-height: 1.6;
-
-      @media (max-width: 576px) {
-        font-size: 1rem;
-      }
     }
 
     h4 {
       font-size: 1rem;
       color: $accent-color;
-
-      @media (max-width: 576px) {
-        font-size: 0.9rem;
-      }
-    }
-  }
-
-  @media (max-width: 576px) {
-    padding: 60px 10px;
-
-    .container {
-      padding: 20px;
     }
   }
 }
 
 // Seção de Contato
-.contactSection {
+.contact-section {
   padding: 80px 20px;
   text-align: center;
-  background-color: $primary-color;
-  color: $white;
 
   h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     color: $accent-color;
-
-    @media (max-width: 576px) {
-      font-size: 2rem;
-    }
   }
 
-  .contactDescription {
+  .contact-description {
     font-size: 1.2rem;
     margin-bottom: 50px;
-    color: $white;
-    line-height: 1.6;
-
-    @media (max-width: 576px) {
-      font-size: 1rem;
-      margin-bottom: 30px;
-    }
+    color: $text-color;
   }
 
-  .contactForm {
+  .contact-form {
     max-width: 600px;
     margin: 0 auto;
     display: grid;
@@ -907,20 +436,6 @@
       border-radius: 5px;
       background-color: $background-color;
       color: $white;
-
-      &::placeholder {
-        color: $light-gray;
-      }
-
-      @media (max-width: 576px) {
-        padding: 10px;
-        font-size: 0.9rem;
-      }
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 150px;
     }
 
     button {
@@ -931,70 +446,39 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      @include transition(background-color, transform);
+      @include transition(background-color);
 
       &:hover {
         background-color: $hover-color;
-        transform: translateY(-2px);
-      }
-
-      @media (max-width: 576px) {
-        padding: 10px;
-        font-size: 0.9rem;
       }
     }
   }
 
-  .whatsappContact {
+  .whatsapp-contact {
     margin-top: 50px;
 
-    .whatsappButton {
+    .whatsapp-button {
       background-color: $accent-color;
       color: $black;
       padding: 15px 30px;
       font-size: 1rem;
       text-decoration: none;
       border-radius: 5px;
-      @include transition(background-color, transform);
-      display: inline-flex;
-      align-items: center;
+      @include transition(background-color);
 
       &:hover {
         background-color: $hover-color;
-        transform: translateY(-3px);
       }
 
       svg {
         margin-right: 10px;
-      }
-
-      @media (max-width: 576px) {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-      }
-    }
-  }
-
-  @media (max-width: 576px) {
-    padding: 60px 10px;
-
-    .contactForm {
-      grid-gap: 10px;
-
-      input,
-      textarea {
-        font-size: 0.9rem;
-      }
-
-      button {
-        font-size: 0.9rem;
       }
     }
   }
 }
 
 // Botão flutuante de WhatsApp
-.whatsappFloating {
+.whatsapp-floating {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -1013,51 +497,28 @@
   &:hover {
     transform: scale(1.1);
   }
-
-  @media (max-width: 576px) {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    bottom: 15px;
-    right: 15px;
-  }
 }
 
-// Responsividade Geral
-@media (max-width: 1024px) {
-  .saoTomeContent {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .projectsSection {
-    background-attachment: scroll;
-  }
-}
-
+// Responsividade
 @media (max-width: 768px) {
-  .heroContent {
-    .heroTitle {
+  .hero-content {
+    h1 {
       font-size: 2rem;
     }
 
-    .heroSubtitle {
+    p {
       font-size: 1rem;
     }
   }
 
-  .saoTomeContent {
-    gap: 20px;
-  }
-
-  .servicesContainer,
-  .productItems,
-  .trendItems {
+  .services-container,
+  .product-items,
+  .trend-items {
     flex-direction: column;
     align-items: center;
   }
 
-  .contactForm {
+  .contact-form {
     grid-gap: 10px;
 
     input,
@@ -1068,14 +529,5 @@
     button {
       font-size: 0.9rem;
     }
-  }
-
-  .saoTomeInfo {
-    text-align: center;
-  }
-
-  .whatsappFloating {
-    bottom: 15px;
-    right: 15px;
   }
 }

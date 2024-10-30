@@ -7,12 +7,9 @@ $hover-color: darken($accent-color, 10%);
 $background-color: #1A1A1A; /* Fundo escuro */
 $text-color: #FFFFFF; /* Branco */
 $light-gray: #CCCCCC; /* Cinza claro */
-$dark-gray: #333333; /* Cinza escuro */
 $white: #fff;
 $black: #000;
 $gold: #FFD700;
-
-
 
 /* Mixin para Centralização */
 @mixin flex-center {
