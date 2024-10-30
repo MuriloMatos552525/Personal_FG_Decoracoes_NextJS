@@ -6,7 +6,6 @@ import Footer from '../components/Footer'; // Importando o Footer
 import styles from '../styles/contato.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faWhatsapp,
   faEnvelope,
   faUser,
   faProjectDiagram,
@@ -14,6 +13,8 @@ import {
   faClock,
   faInfoCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
 
 declare global {
   interface Window {
@@ -145,7 +146,6 @@ const ContatoPage: React.FC = () => {
                 required
               >
                 <option value="">Selecione o material</option>
-                <option value="mármore">Mármore</option>
                 <option value="granito">Granito</option>
                 <option value="quartzito">Quartzito</option>
                 <option value="pedra-diversa">Pedra Diversa</option>

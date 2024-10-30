@@ -48,15 +48,7 @@ const SobrePage: React.FC = () => {
             <div className={styles['team-grid']}>
               <div className={styles['team-member']}>
                 <h3>Rogerio Freitas</h3>
-                <p>Especialista em Mármore</p>
-              </div>
-              <div className={styles['team-member']}>
-                <h3>Maria Souza</h3>
-                <p>Consultora de Projetos</p>
-              </div>
-              <div className={styles['team-member']}>
-                <h3>Carlos Oliveira</h3>
-                <p>Especialista em Granito</p>
+                <p>Vendedor</p>
               </div>
             </div>
           </div>
