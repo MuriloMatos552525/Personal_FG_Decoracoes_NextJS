@@ -58,7 +58,7 @@ const ContatoPage: React.FC = () => {
     // Enviar evento de conversão para Google Ads
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'conversion', {
-        send_to: 'AW-XXXXXXXXXX/xxxxxxxxx', // Substitua pelo seu ID de conversão
+        send_to: 'AW-874-215-7856/xxxxxxxxx', // Substitua pelo seu ID de conversão
         value: 1.0,
         currency: 'BRL',
       });

@@ -11,7 +11,7 @@ class MyDocument extends Document {
           {/* Google Tag Manager (noscript) */}
           <noscript>
             <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" // Substitua GTM-XXXXXXX pelo seu ID do GTM
+              src="https://www.googletagmanager.com/ns.html?id=GTM-NW2HVP6S" // Substitua GTM-XXXXXXX pelo seu ID do GTM
               height="0"
               width="0"
               style={{ display: 'none', visibility: 'hidden' }}

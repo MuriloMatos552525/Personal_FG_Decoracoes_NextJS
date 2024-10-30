@@ -363,4 +363,5 @@ export const pedras: Pedra[] = [
     peso: '35 kg/m²',
     dimensoes: '40x20 cm',
   },
+  
 ];

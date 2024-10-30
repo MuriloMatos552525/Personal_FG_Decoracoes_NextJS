@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           {/* Global Site Tag (gtag.js) - Google Ads */}
           <Script
             strategy="afterInteractive"
-            src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX" // Substitua AW-XXXXXXXXXX pelo seu ID do Google Ads
+            src="https://www.googletagmanager.com/gtag/js?id=AW-874-215-7856" // Substitua AW-XXXXXXXXXX pelo seu ID do Google Ads
           />
           <Script
             id="google-ads"
@@ -59,7 +59,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'AW-XXXXXXXXXX'); // Substitua AW-XXXXXXXXXX pelo seu ID do Google Ads
+                gtag('config', 'AW-874-215-7856'); // Substitua AW-XXXXXXXXXX pelo seu ID do Google Ads
               `,
             }}
           />
@@ -74,7 +74,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','GTM-XXXXXXX'); // Substitua GTM-XXXXXXX pelo seu ID do GTM
+                })(window,document,'script','dataLayer','GTM-NW2HVP6S');
               `,
             }}
           />
