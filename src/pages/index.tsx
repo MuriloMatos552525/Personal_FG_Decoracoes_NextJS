@@ -55,7 +55,7 @@ const HomePage: React.FC = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className={styles.heroSubtitle}
           >
-            No Grupo FG Decorações, oferecemos uma seleção premium de mármores e granitos que elevam a sofisticação e durabilidade de qualquer projeto.
+            No Grupo FG Decorações, oferecemos uma seleção premium de Pedras naturais e granitos que elevam a sofisticação e durabilidade de qualquer projeto.
           </motion.p>
           <motion.div
             initial={{ scale: 0 }}
