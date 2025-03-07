@@ -1,0 +1,118 @@
+@import '../styles/variables';
+@import '../styles/index.module.scss'; // Para reaproveitar o container, por exemplo
+
+.produtosPage {
+  padding: 80px 20px;
+  background-color: $background-color;
+  color: $text-color;
+
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: $accent-color;
+    font-weight: 600;
+  }
+
+  .filtroTipos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+
+    button {
+      padding: 12px 30px;
+      background-color: transparent;
+      border: 2px solid $primary-color;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: $primary-color;
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $white;
+      }
+
+      &.active {
+        background-color: $accent-color;
+        border-color: $accent-color;
+        color: $black;
+      }
+    }
+  }
+
+  .produtosGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  .produtoItem {
+    background-color: $white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: $accent-color;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $text-color;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .detalhesButton {
+      background-color: $accent-color;
+      color: $black;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    .filtroTipos {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .produtoItem {
+      max-width: 100%;
+    }
+  }
+}

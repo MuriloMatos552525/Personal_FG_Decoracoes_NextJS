@@ -1,0 +1,96 @@
+@import '../styles/variables';
+@import '../styles/index.module.scss';
+
+.produtoPage {
+  padding: 80px 20px;
+  background-color: $background-color;
+  color: $text-color;
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: $accent-color;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .produtoDetalhes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+
+    .produtoImagem {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .produtoInfo {
+      max-width: 600px;
+
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        line-height: 1.6;
+        color: $text-color;
+      }
+
+      .whatsappButton {
+        display: inline-flex;
+        align-items: center;
+        padding: 12px 24px;
+        background-color: #25d366;
+        color: $white;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        margin-top: 20px;
+
+        svg {
+          margin-right: 10px;
+        }
+
+        &:hover {
+          background-color: darken(#25d366, 8%);
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    .produtoDetalhes {
+      flex-direction: column;
+      align-items: center;
+
+      .produtoInfo {
+        p {
+          font-size: 1rem;
+        }
+
+        .whatsappButton {
+          font-size: 1rem;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+}
