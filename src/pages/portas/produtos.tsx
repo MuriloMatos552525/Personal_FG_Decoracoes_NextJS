@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { produtosPortas } from '../../data-portas'; // Array com os produtos de portas/espelhos
+import { produtosPortas } from '../../data-portas';
 import styles from '../../styles/produtosPortas.module.scss';
 import { motion } from 'framer-motion';
-import Header from '../../components/HeaderPortas';
-import Footer from '../../components/Footer';
+import HeaderPortas from '../../components/HeaderPortas';
+import FooterPortas from '../../components/FooterPortas';
 
 const ProdutosPortas: React.FC = () => {
   const [tipoSelecionado, setTipoSelecionado] = useState<string>('Todos');
@@ -17,7 +17,7 @@ const ProdutosPortas: React.FC = () => {
 
   return (
     <div>
-      <Header />
+      <HeaderPortas />
       <section className={styles.produtosPage}>
         <div className={styles.container}>
           <h1>Nossos Produtos</h1>
@@ -42,7 +42,7 @@ const ProdutosPortas: React.FC = () => {
                 <img src={produto.imagem} alt={produto.nome} />
                 <h3>{produto.nome}</h3>
                 <p>{produto.descricao}</p>
-                <Link href={`/portas/${produto.id}`} className={styles.detalhesButton}>
+                <Link href={`/portas/produto/${produto.id}`} className={styles.detalhesButton}>
                   Ver Detalhes
                 </Link>
               </motion.div>
@@ -50,7 +50,7 @@ const ProdutosPortas: React.FC = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      <FooterPortas />
     </div>
   );
 };

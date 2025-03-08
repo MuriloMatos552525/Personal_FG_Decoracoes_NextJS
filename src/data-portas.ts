@@ -1,4 +1,4 @@
-// src/data.ts
+// src/data-portas.ts
 
 export interface ProdutoPortas {
     id: number;

@@ -1,11 +1,11 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { produtosPortas } from '../../data-portas'; // Array com os produtos de portas/espelhos
-import styles from '../../styles/produtoPortas.module.scss';
+import { produtosPortas } from '../../../data-portas';
+import styles from '../../../styles/produtoPortas.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import Header from '../../components/HeaderPortas';
-import Footer from '../../components/Footer';
+import HeaderPortas from '../../../components/HeaderPortas';
+import FooterPortas from '../../../components/FooterPortas';
 
 const ProdutoPortas: React.FC = () => {
   const router = useRouter();
@@ -23,7 +23,7 @@ const ProdutoPortas: React.FC = () => {
 
   return (
     <>
-      <Header />
+      <HeaderPortas />
       <section className={styles.produtoPage}>
         <div className={styles.container}>
           <h1>{produto.nome}</h1>
@@ -35,7 +35,6 @@ const ProdutoPortas: React.FC = () => {
             />
             <div className={styles.produtoInfo}>
               <p>{produto.descricao}</p>
-              {/* Aqui você pode adicionar outras informações específicas do produto, se houver */}
               <a
                 href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensagem)}`}
                 target="_blank"
@@ -48,7 +47,7 @@ const ProdutoPortas: React.FC = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      <FooterPortas />
     </>
   );
 };
